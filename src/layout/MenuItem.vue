@@ -27,7 +27,7 @@
           <q-icon :name="item.icon" />
         </q-item-section>
 
-        <q-item-section class="">{{ item.title }}</q-item-section>
+        <q-item-section>{{ item.title }}</q-item-section>
       </q-item>
     </template>
   </template>
@@ -35,7 +35,6 @@
 
 <script lang="ts" setup>
 import { PropType } from "vue";
-import MenuItem from "./MenuItem.vue";
 import { Menu } from "@/types/menu";
 
 const props = defineProps({
