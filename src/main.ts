@@ -4,7 +4,6 @@ import { createApp } from "vue";
 import { Quasar, Notify } from "quasar";
 import quasarLang from "quasar/lang/zh-CN";
 import quasarIconSet from "quasar/icon-set/svg-material-icons";
-import { useRootStore } from "@/store/modules/root";
 
 // Import icon libraries
 import "@quasar/extras/material-icons/material-icons.css";

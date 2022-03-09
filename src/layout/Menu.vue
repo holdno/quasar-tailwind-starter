@@ -11,7 +11,6 @@ import { onMounted, ref, watch } from "vue";
 import MenuItem from "./MenuItem.vue";
 import { useRouter, useRoute } from "vue-router";
 import { Menu } from "@/types/menu";
-import { LocationAsRelativeRaw } from "vue-router";
 
 const menu = ref<Menu[]>([
   {

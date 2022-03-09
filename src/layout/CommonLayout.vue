@@ -4,7 +4,7 @@
     class="rounded-borders tw-flex tw-flex-no-wrap tw-h-full tw-w-full"
   >
     <q-header elevated class="bg-black">
-      <ToolBar @show="showDrawer"></ToolBar>
+      <ToolBar></ToolBar>
     </q-header>
 
     <q-drawer v-model="drawer" :mini="miniState" :width="200" :breakpoint="500">
@@ -12,7 +12,7 @@
     </q-drawer>
 
     <q-page-container class="tw-w-full tw-box-border tw-bg-gray-50">
-      <div class="tw-p-4">
+      <div class="lg:tw-p-4 md:tw-py-4 md:tw-px-10">
         <router-view />
       </div>
     </q-page-container>
@@ -23,10 +23,9 @@
 import { ref } from "vue";
 import ToolBar from "@/components/ToolBar.vue";
 import Menu from "./Menu.vue";
+import store from "@/store/pinia";
+import { storeToRefs } from "pinia";
 
-const drawer = ref(false);
+const drawer = storeToRefs(store.root).drawerDisplay;
 const miniState = ref(false);
-function showDrawer(value: boolean) {
-  drawer.value = value;
-}
 </script>

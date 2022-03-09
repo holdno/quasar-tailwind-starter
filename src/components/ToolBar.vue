@@ -6,13 +6,14 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import store from "@/store/pinia";
+import { storeToRefs } from "pinia";
 
 const emits = defineEmits(["show"]);
-const drawer = ref(false);
+
+const drawer = storeToRefs(store.root).drawerDisplay;
 
 function switchMenu() {
   drawer.value = !drawer.value;
-  emits("show", drawer.value);
 }
 </script>

@@ -10,12 +10,14 @@ export interface QNotify {
 
 export interface State {
   q: Notify;
+  drawerDisplay: boolean;
 }
 
 export const useRootStore = defineStore(RootStoreKey, {
   state(): State {
     return {
       q: Notify,
+      drawerDisplay: false,
     };
   },
   getters: {
@@ -28,6 +30,9 @@ export const useRootStore = defineStore(RootStoreKey, {
     },
   },
   actions: {
+    modifyDrawer(payload: boolean) {
+      this.drawerDisplay = payload;
+    },
     notify(payload: QNotify) {
       if (!payload.msg) return;
       this.$q.create({
