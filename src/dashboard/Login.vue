@@ -13,7 +13,7 @@
           <div
             class="tw-w-1/3 tw-mx-auto tw-px-2 tw-flex tw-flex-col tw-items-center tw-justify-center tw-pt-12 lg:tw-pt-0"
           >
-            <img src="logo.jpeg" alt="logo" />
+            <img src="favicon.ico" alt="logo" />
             <!-- <div style="margin-top: -20px" class="tw-text-gray-600 tw-text-lg">
               elec.fun
             </div> -->
