@@ -76,22 +76,27 @@ const router = useRouter();
 const route = useRoute();
 
 function deepCheck(menu: Menu[]): boolean {
-  let willOpen = false;
+  let upperLevelOpen = false;
   for (let i = 0; i < menu.length; i++) {
     const item = menu[i];
     if (item.children && item.children.length > 0) {
       item.open = deepCheck(item.children);
       if (item.open) {
-        willOpen = true;
+        upperLevelOpen = true;
       }
     } else if (item.router) {
       try {
         const itemPaths = router.resolve(item.router)?.matched;
         const itemRoute = itemPaths[itemPaths.length - 1];
         for (let ii = 0; ii < route.matched.length; ii++) {
-          if (itemRoute.name == route.matched[ii].name) {
-            console.log(itemRoute, true);
-            willOpen = true;
+          if (
+            itemRoute.name === route.matched[ii].name ||
+            itemRoute.name === route.matched[ii].meta?.activeRouteName
+          ) {
+            upperLevelOpen = true;
+            item.open = true;
+          } else {
+            item.open = false;
           }
         }
       } catch (e) {
@@ -99,7 +104,8 @@ function deepCheck(menu: Menu[]): boolean {
       }
     }
   }
-  return willOpen;
+
+  return upperLevelOpen;
 }
 
 watch(

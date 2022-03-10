@@ -16,8 +16,8 @@ const router = createRouter({
 
 router.beforeEach((to, from) => {
   const userStore = useUserStore();
-  let admin = userStore.getUser;
-  if (!admin?.id && to.fullPath != "/login") {
+  const admin = userStore.getUser;
+  if (!admin?.id && to.fullPath !== "/login") {
     router.push("/login");
     return true;
   }

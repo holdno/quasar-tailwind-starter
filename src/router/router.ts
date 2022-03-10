@@ -31,6 +31,14 @@ export const routes = [
         component: () => import("@/index/examples/Page3.vue"),
       },
       {
+        name: "page4",
+        path: "/page2/page4",
+        meta: {
+          activeRouteName: "page2", // menu which named 'page2' is actived when this router on target
+        },
+        component: () => import("@/index/examples/Page2/page4.vue"),
+      },
+      {
         name: "one",
         path: "one",
         component: () => import("@/index/examples/one.vue"),

@@ -1,3 +1,5 @@
+import moment from "moment-timezone";
+
 export function randomNum(minNum: number, maxNum: number) {
   switch (arguments.length) {
     case 1:
@@ -8,8 +10,6 @@ export function randomNum(minNum: number, maxNum: number) {
       return 0;
   }
 }
-
-import moment from "moment-timezone";
 
 export function formatTimestamp(
   timestamp: number,

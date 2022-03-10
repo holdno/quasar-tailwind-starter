@@ -1,0 +1,8 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "vueIndentScriptAndStyle": true,
+  "importOrder": ["^@[^/]", "^[./]", "^@/"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
