@@ -2,7 +2,7 @@
   "singleQuote": true,
   "trailingComma": "all",
   "vueIndentScriptAndStyle": true,
-  "importOrder": ["^@[^/]", "^[./]", "^@/"],
+  "importOrder": [".+vue$", "^([^@^/])", "^@/(.*)$"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }
